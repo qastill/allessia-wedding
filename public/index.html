@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Allessia Wedding — Dekorasi Pernikahan Elegan</title>
+  <meta name="description" content="Allessia Wedding — Jasa dekorasi pernikahan profesional. Wujudkan pernikahan impianmu dengan sentuhan elegan dan berkesan." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── RESET & BASE ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #FAF7F2;
+      --rose: #D4A5A5;
+      --gold: #C9A96E;
+      --gold-light: #e8d5b0;
+      --charcoal: #2C2C2C;
+      --gray: #888;
+      --light-gray: #ccc;
+      --white: #fff;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Jost', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-sans);
+      background: var(--cream);
+      color: var(--charcoal);
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ─── SCROLLBAR ─── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--cream); }
+    ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+    /* ─── UTILITIES ─── */
+    .section { padding: 90px 0; }
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+    .section-label {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+      display: block;
+    }
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 400;
+      line-height: 1.2;
+      color: var(--charcoal);
+      margin-bottom: 20px;
+    }
+    .section-subtitle {
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--gray);
+      max-width: 560px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      border-radius: 2px;
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: none;
+    }
+    .btn-gold {
+      background: var(--gold);
+      color: var(--white);
+    }
+    .btn-gold:hover { background: #b8913a; transform: translateY(-1px); box-shadow: 0 8px 24px rgba(201,169,110,0.35); }
+    .btn-outline {
+      background: transparent;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+    }
+    .btn-outline:hover { background: var(--gold); color: var(--white); }
+    .btn-wa {
+      background: #25D366;
+      color: var(--white);
+    }
+    .btn-wa:hover { background: #1fbc59; transform: translateY(-1px); box-shadow: 0 8px 24px rgba(37,211,102,0.3); }
+    .divider {
+      width: 60px;
+      height: 1px;
+      background: var(--gold);
+      margin: 24px 0;
+    }
+    .text-center { text-align: center; }
+    .text-center .divider { margin: 24px auto; }
+    .text-center .section-subtitle { margin: 0 auto; }
+
+    /* ─── FADE-IN ANIMATION ─── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-up.delay-1 { transition-delay: 0.1s; }
+    .fade-up.delay-2 { transition-delay: 0.2s; }
+    .fade-up.delay-3 { transition-delay: 0.3s; }
+    .fade-up.delay-4 { transition-delay: 0.4s; }
+
+    /* ─── NAVBAR ─── */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      transition: background 0.4s ease, box-shadow 0.4s ease, padding 0.4s ease;
+      padding: 24px 0;
+    }
+    #navbar.scrolled {
+      background: rgba(250,247,242,0.97);
+      box-shadow: 0 2px 20px rgba(44,44,44,0.08);
+      padding: 14px 0;
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .nav-logo img {
+      height: 52px;
+      width: auto;
+      transition: opacity 0.3s;
+    }
+    .nav-logo .logo-white { display: block; }
+    .nav-logo .logo-color { display: none; }
+    #navbar.scrolled .nav-logo .logo-white { display: none; }
+    #navbar.scrolled .nav-logo .logo-color { display: block; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--white);
+      transition: color 0.3s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px; left: 0; right: 0;
+      height: 1px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+    .nav-links a:hover::after { transform: scaleX(1); }
+    #navbar.scrolled .nav-links a { color: var(--charcoal); }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-wa {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      padding: 10px 20px;
+      border-radius: 2px;
+      background: #25D366;
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .nav-wa:hover { background: #1fbc59; transform: translateY(-1px); }
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+    #navbar.scrolled .hamburger span { background: var(--charcoal); }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(250,247,242,0.98);
+      z-index: 999;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-size: 28px;
+      font-family: var(--font-serif);
+      color: var(--charcoal);
+      letter-spacing: 2px;
+      transition: color 0.3s;
+    }
+    .mobile-menu a:hover { color: var(--gold); }
+
+    /* ─── HERO ─── */
+    #hero {
+      position: relative;
+      height: 100vh;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('images/hero.jpeg');
+      background-size: cover;
+      background-position: center;
+      transform: scale(1.05);
+      transition: transform 8s ease;
+    }
+    #hero.loaded .hero-bg { transform: scale(1); }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(20,15,10,0.55) 0%, rgba(20,15,10,0.35) 50%, rgba(20,15,10,0.6) 100%);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 0 24px;
+      max-width: 860px;
+    }
+    .hero-eyebrow {
+      font-size: 11px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 20px;
+      display: block;
+    }
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(48px, 8vw, 80px);
+      font-weight: 400;
+      color: var(--cream);
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+    .hero-sub {
+      font-size: 15px;
+      font-weight: 300;
+      color: rgba(250,247,242,0.85);
+      letter-spacing: 3px;
+      margin-bottom: 44px;
+    }
+    .hero-scroll {
+      position: absolute;
+      bottom: 36px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.5);
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+    .hero-scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent);
+      animation: scrollDown 2s ease-in-out infinite;
+    }
+    @keyframes scrollDown {
+      0%, 100% { transform: scaleY(1); transform-origin: top; }
+      50% { transform: scaleY(0.4); transform-origin: bottom; }
+    }
+
+    /* ─── ABOUT / PILLARS ─── */
+    #about {
+      background: var(--white);
+    }
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      margin-bottom: 64px;
+    }
+    .pillar {
+      padding: 48px 40px;
+      border-right: 1px solid rgba(201,169,110,0.2);
+      text-align: center;
+      position: relative;
+    }
+    .pillar:last-child { border-right: none; }
+    .pillar-icon {
+      font-size: 22px;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .pillar-title {
+      font-family: var(--font-serif);
+      font-size: 26px;
+      font-weight: 400;
+      color: var(--charcoal);
+      margin-bottom: 10px;
+    }
+    .pillar-text {
+      font-size: 14px;
+      color: var(--gray);
+      line-height: 1.7;
+    }
+    .about-body {
+      max-width: 680px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .about-body p {
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--gray);
+      line-height: 1.9;
+    }
+
+    /* ─── PACKAGES ─── */
+    #paket { background: var(--cream); }
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 52px;
+    }
+    .package-card {
+      background: var(--white);
+      border-radius: 2px;
+      overflow: hidden;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      cursor: pointer;
+    }
+    .package-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 50px rgba(44,44,44,0.1);
+    }
+    .package-img-wrap {
+      position: relative;
+      overflow: hidden;
+      height: 280px;
+    }
+    .package-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .package-card:hover .package-img-wrap img { transform: scale(1.07); }
+    .package-badge {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: rgba(201,169,110,0.92);
+      color: var(--white);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 2px;
+    }
+    .package-body {
+      padding: 24px;
+      text-align: center;
+    }
+    .package-name {
+      font-family: var(--font-serif);
+      font-size: 26px;
+      font-weight: 400;
+      color: var(--charcoal);
+      margin-bottom: 8px;
+    }
+    .package-desc {
+      font-size: 13px;
+      color: var(--gray);
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    /* ─── GALLERY ─── */
+    #galeri { background: var(--white); }
+    .gallery-grid {
+      columns: 3;
+      column-gap: 16px;
+      margin-top: 52px;
+    }
+    .gallery-item {
+      break-inside: avoid;
+      margin-bottom: 16px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 2px;
+      cursor: pointer;
+    }
+    .gallery-item img {
+      width: 100%;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .gallery-item:hover img { transform: scale(1.05); }
+    .gallery-item.hidden { display: none; }
+    .gallery-item.show { display: block; }
+    .gallery-more-wrap {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    /* ─── ITEM DEKORASI ─── */
+    #dekor { background: var(--cream); }
+    .dekor-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 52px;
+    }
+    .dekor-item {
+      background: var(--white);
+      border-radius: 2px;
+      overflow: hidden;
+      text-align: center;
+    }
+    .dekor-img-wrap {
+      height: 200px;
+      overflow: hidden;
+    }
+    .dekor-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .dekor-item:hover .dekor-img-wrap img { transform: scale(1.1); }
+    .dekor-caption {
+      padding: 14px 12px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--charcoal);
+    }
+
+    /* ─── BOOKING ─── */
+    #booking {
+      background: var(--charcoal);
+      position: relative;
+      overflow: hidden;
+    }
+    #booking::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 50%, rgba(201,169,110,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    #booking .section-label { color: var(--gold-light); }
+    #booking .section-title { color: var(--cream); }
+    #booking .section-subtitle { color: rgba(250,247,242,0.6); }
+    .booking-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      margin-top: 52px;
+      align-items: start;
+    }
+    /* Calendar */
+    .calendar-section {
+      background: rgba(250,247,242,0.05);
+      border: 1px solid rgba(201,169,110,0.2);
+      border-radius: 4px;
+      padding: 32px;
+    }
+    .cal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+    .cal-title {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      color: var(--cream);
+      font-weight: 400;
+    }
+    .cal-nav {
+      display: flex;
+      gap: 8px;
+    }
+    .cal-btn {
+      background: rgba(201,169,110,0.15);
+      border: 1px solid rgba(201,169,110,0.3);
+      color: var(--gold);
+      width: 34px;
+      height: 34px;
+      border-radius: 2px;
+      cursor: pointer;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+    .cal-btn:hover { background: var(--gold); color: var(--white); }
+    .cal-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 4px;
+    }
+    .cal-day-label {
+      text-align: center;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--gold);
+      padding: 6px 0;
+    }
+    .cal-day {
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.2s;
+      color: var(--cream);
+      border: 1px solid transparent;
+    }
+    .cal-day:hover:not(.booked):not(.past):not(.empty) {
+      border-color: var(--gold);
+      background: rgba(201,169,110,0.1);
+    }
+    .cal-day.selected {
+      background: var(--gold);
+      color: var(--white);
+      border-color: var(--gold);
+    }
+    .cal-day.booked {
+      color: #555;
+      text-decoration: line-through;
+      cursor: not-allowed;
+      background: rgba(100,100,100,0.1);
+    }
+    .cal-day.past {
+      color: #444;
+      cursor: not-allowed;
+    }
+    .cal-day.empty { cursor: default; }
+    .cal-legend {
+      display: flex;
+      gap: 20px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      color: rgba(250,247,242,0.6);
+    }
+    .legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 1px;
+    }
+    .legend-dot.available { border: 1px solid var(--gold); }
+    .legend-dot.booked-dot { background: #444; }
+    .legend-dot.past-dot { background: #333; }
+    .cal-status {
+      margin-top: 20px;
+      padding: 14px 18px;
+      border-radius: 2px;
+      font-size: 13px;
+      display: none;
+    }
+    .cal-status.show { display: block; }
+    .cal-status.available { background: rgba(37,211,102,0.1); border: 1px solid rgba(37,211,102,0.3); color: #4ade80; }
+    .cal-status.booked { background: rgba(255,100,100,0.1); border: 1px solid rgba(255,100,100,0.3); color: #f87171; }
+    /* Form */
+    .booking-form-section {
+      background: rgba(250,247,242,0.05);
+      border: 1px solid rgba(201,169,110,0.2);
+      border-radius: 4px;
+      padding: 32px;
+    }
+    .form-title {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      color: var(--cream);
+      margin-bottom: 24px;
+      font-weight: 400;
+    }
+    .form-group {
+      margin-bottom: 18px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 7px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: rgba(250,247,242,0.07);
+      border: 1px solid rgba(201,169,110,0.25);
+      border-radius: 2px;
+      padding: 12px 16px;
+      font-family: var(--font-sans);
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--cream);
+      transition: border-color 0.2s;
+      outline: none;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: rgba(250,247,242,0.3); }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--gold); }
+    .form-group select { cursor: pointer; }
+    .form-group select option { background: var(--charcoal); color: var(--cream); }
+    .form-group textarea { min-height: 80px; resize: vertical; }
+    .form-date-display {
+      background: rgba(201,169,110,0.1);
+      border: 1px solid rgba(201,169,110,0.3);
+      border-radius: 2px;
+      padding: 12px 16px;
+      font-size: 14px;
+      color: var(--gold-light);
+      margin-bottom: 20px;
+      display: none;
+    }
+    .form-date-display.show { display: block; }
+
+    /* ─── TESTIMONIAL ─── */
+    #testimonial { background: var(--cream); }
+    .testi-image-wrap {
+      margin-top: 52px;
+      text-align: center;
+    }
+    .testi-image-wrap img {
+      max-width: 900px;
+      margin: 0 auto;
+      border-radius: 4px;
+      box-shadow: 0 20px 60px rgba(44,44,44,0.12);
+    }
+
+    /* ─── TERMS ─── */
+    #terms { background: var(--white); }
+    .terms-toggle {
+      margin-top: 32px;
+      text-align: center;
+    }
+    .terms-content {
+      margin-top: 32px;
+      display: none;
+    }
+    .terms-content.open { display: block; }
+    .terms-content img {
+      max-width: 900px;
+      margin: 0 auto;
+      border-radius: 4px;
+      box-shadow: 0 20px 60px rgba(44,44,44,0.1);
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--charcoal);
+      padding: 64px 0 32px;
+    }
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(201,169,110,0.15);
+    }
+    .footer-brand img { height: 56px; margin-bottom: 20px; }
+    .footer-brand p {
+      font-size: 13px;
+      color: rgba(250,247,242,0.5);
+      line-height: 1.8;
+      max-width: 260px;
+    }
+    .footer-col h4 {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul li a {
+      font-size: 13px;
+      color: rgba(250,247,242,0.5);
+      transition: color 0.2s;
+    }
+    .footer-col ul li a:hover { color: var(--gold); }
+    .footer-social {
+      display: flex;
+      gap: 12px;
+      margin-top: 8px;
+    }
+    .social-icon {
+      width: 38px;
+      height: 38px;
+      border: 1px solid rgba(201,169,110,0.3);
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-size: 16px;
+      transition: all 0.2s;
+    }
+    .social-icon:hover { background: var(--gold); color: var(--white); border-color: var(--gold); }
+    .footer-bottom {
+      padding-top: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-bottom p {
+      font-size: 12px;
+      color: rgba(250,247,242,0.35);
+    }
+
+    /* ─── LIGHTBOX ─── */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: rgba(0,0,0,0.92);
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 88vh;
+      object-fit: contain;
+      border-radius: 2px;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      color: var(--white);
+      font-size: 32px;
+      cursor: pointer;
+      line-height: 1;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+    .lightbox-close:hover { opacity: 1; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1024px) {
+      .packages-grid { grid-template-columns: repeat(2, 1fr); }
+      .dekor-grid { grid-template-columns: repeat(3, 1fr); }
+      .booking-wrapper { grid-template-columns: 1fr; gap: 32px; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav-links, .nav-wa { display: none; }
+      .hamburger { display: flex; }
+      .section { padding: 64px 0; }
+      .pillars { grid-template-columns: 1fr; }
+      .pillar { border-right: none; border-bottom: 1px solid rgba(201,169,110,0.2); padding: 32px 24px; }
+      .pillar:last-child { border-bottom: none; }
+      .packages-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      .gallery-grid { columns: 2; }
+      .dekor-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+    }
+    @media (max-width: 480px) {
+      .packages-grid { grid-template-columns: 1fr; }
+      .gallery-grid { columns: 1; }
+      .dekor-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ NAVBAR ═══ -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">
+      <img src="images/logo-white.jpg" alt="Allessia Wedding" class="logo-white" />
+      <img src="images/logo-color.jpg" alt="Allessia Wedding" class="logo-color" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="#hero">Beranda</a></li>
+      <li><a href="#paket">Paket</a></li>
+      <li><a href="#galeri">Galeri</a></li>
+      <li><a href="#booking">Booking</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+    </ul>
+    <a href="https://wa.me/6281234567890?text=Halo%20Allessia%20Wedding!%20Saya%20ingin%20bertanya%20tentang%20dekorasi%20pernikahan." target="_blank" class="nav-wa">
+      <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.122 1.523 5.863L0 24l6.303-1.494A11.956 11.956 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.015-1.375l-.36-.213-3.737.885.921-3.634-.235-.374A9.818 9.818 0 1112 21.818z"/></svg>
+      WhatsApp
+    </a>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#hero" onclick="toggleMenu()">Beranda</a>
+  <a href="#paket" onclick="toggleMenu()">Paket</a>
+  <a href="#galeri" onclick="toggleMenu()">Galeri</a>
+  <a href="#booking" onclick="toggleMenu()">Booking</a>
+  <a href="#kontak" onclick="toggleMenu()">Kontak</a>
+  <a href="https://wa.me/6281234567890" target="_blank" onclick="toggleMenu()">WhatsApp</a>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-eyebrow fade-up">Allessia Wedding · Dekorasi Pernikahan</span>
+    <h1 class="hero-title fade-up delay-1">Wujudkan<br>Pernikahan Impianmu</h1>
+    <p class="hero-sub fade-up delay-2">Dekorasi Elegan · Profesional · Berkesan</p>
+    <a href="#paket" class="btn btn-gold fade-up delay-3">Lihat Paket Kami</a>
+  </div>
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ═══ ABOUT ═══ -->
+<section id="about" class="section">
+  <div class="container">
+    <div class="pillars fade-up">
+      <div class="pillar">
+        <div class="pillar-icon">✦</div>
+        <div class="pillar-title">Pengalaman</div>
+        <p class="pillar-text">Dipercaya ratusan pasangan untuk menciptakan momen pernikahan yang tak terlupakan.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">✦</div>
+        <div class="pillar-title">Kreativitas</div>
+        <p class="pillar-text">Setiap dekorasi dirancang unik, memadukan estetika modern dan sentuhan tradisional yang elegan.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">✦</div>
+        <div class="pillar-title">Kepercayaan</div>
+        <p class="pillar-text">Kami berkomitmen memenuhi setiap janji — tepat waktu, sesuai konsep, dan melebihi ekspektasi.</p>
+      </div>
+    </div>
+    <div class="about-body fade-up delay-1">
+      <span class="section-label">Tentang Kami</span>
+      <h2 class="section-title">Kisah Cinta Dimulai<br><em>dari Dekorasi yang Tepat</em></h2>
+      <div class="divider" style="margin: 24px auto;"></div>
+      <p>Allessia Wedding hadir sebagai mitra terpercaya Anda dalam mewujudkan pernikahan impian. Dengan tim kreatif berpengalaman, kami menghadirkan dekorasi pelaminan, akad, dan resepsi yang penuh detail — dari konsep minimalis modern hingga mewah klasik. Setiap sentuhan dekorasi kami cerminkan cinta dan dedikasi untuk hari terbaik dalam hidupmu.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PAKET ═══ -->
+<section id="paket" class="section">
+  <div class="container">
+    <div class="text-center fade-up">
+      <span class="section-label">Pilihan Paket</span>
+      <h2 class="section-title">Paket Dekorasi<br>Pilihan Kami</h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">Setiap paket dirancang dengan standar kualitas premium, disesuaikan dengan kebutuhan dan impian Anda.</p>
+    </div>
+    <div class="packages-grid">
+      <div class="package-card fade-up delay-1">
+        <div class="package-img-wrap">
+          <img src="images/gold/gold-1.jpeg" alt="Paket Gold" loading="lazy" />
+          <span class="package-badge">Gold</span>
+        </div>
+        <div class="package-body">
+          <h3 class="package-name">Paket Gold</h3>
+          <p class="package-desc">Dekorasi pelaminan mewah bernuansa emas, cocok untuk pernikahan grand dan berkesan.</p>
+          <a href="https://wa.me/6281234567890?text=Halo%20Allessia%20Wedding!%20Saya%20tertarik%20dengan%20Paket%20Gold.%20Mohon%20informasinya." target="_blank" class="btn btn-wa">Hubungi Kami</a>
+        </div>
+      </div>
+      <div class="package-card fade-up delay-2">
+        <div class="package-img-wrap">
+          <img src="images/diamond/diamond-1.jpg" alt="Paket Diamond" loading="lazy" />
+          <span class="package-badge">Diamond</span>
+        </div>
+        <div class="package-body">
+          <h3 class="package-name">Paket Diamond</h3>
+          <p class="package-desc">Kemewahan tertinggi dengan detail ornamen eksklusif untuk pernikahan paling spesial.</p>
+          <a href="https://wa.me/6281234567890?text=Halo%20Allessia%20Wedding!%20Saya%20tertarik%20dengan%20Paket%20Diamond.%20Mohon%20informasinya." target="_blank" class="btn btn-wa">Hubungi Kami</a>
+        </div>
+      </div>
+      <div class="package-card fade-up delay-3">
+        <div class="package-img-wrap">
+          <img src="images/sapphire/sapphire-1.jpeg" alt="Paket Sapphire" loading="lazy" />
+          <span class="package-badge">Sapphire</span>
+        </div>
+        <div class="package-body">
+          <h3 class="package-name">Paket Sapphire</h3>
+          <p class="package-desc">Nuansa biru safir yang elegan, memadukan keanggunan modern dan tradisi yang kaya.</p>
+          <a href="https://wa.me/6281234567890?text=Halo%20Allessia%20Wedding!%20Saya%20tertarik%20dengan%20Paket%20Sapphire.%20Mohon%20informasinya." target="_blank" class="btn btn-wa">Hubungi Kami</a>
+        </div>
+      </div>
+      <div class="package-card fade-up delay-4">
+        <div class="package-img-wrap">
+          <img src="images/hortensia/hortensia-1.jpg" alt="Paket Hortensia" loading="lazy" />
+          <span class="package-badge">Hortensia</span>
+        </div>
+        <div class="package-body">
+          <h3 class="package-name">Paket Hortensia</h3>
+          <p class="package-desc">Nuansa bunga hortensia yang romantis dan segar, sempurna untuk lamaran dan akad.</p>
+          <a href="https://wa.me/6281234567890?text=Halo%20Allessia%20Wedding!%20Saya%20tertarik%20dengan%20Paket%20Hortensia.%20Mohon%20informasinya." target="_blank" class="btn btn-wa">Hubungi Kami</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ GALERI ═══ -->
+<section id="galeri" class="section">
+  <div class="container">
+    <div class="text-center fade-up">
+      <span class="section-label">Portfolio</span>
+      <h2 class="section-title">Galeri Karya<br>Allessia Wedding</h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">Setiap foto adalah cerita cinta yang kami bantu wujudkan.</p>
+    </div>
+    <div class="gallery-grid fade-up delay-1" id="galleryGrid">
+      <div class="gallery-item" onclick="openLightbox('images/gold/gold-1.jpeg')"><img src="images/gold/gold-1.jpeg" alt="Gold 1" loading="lazy" /></div>
+      <div class="gallery-item" onclick="openLightbox('images/diamond/diamond-1.jpg')"><img src="images/diamond/diamond-1.jpg" alt="Diamond 1" loading="lazy" /></div>
+      <div class="gallery-item" onclick="openLightbox('images/sapphire/sapphire-1.jpeg')"><img src="images/sapphire/sapphire-1.jpeg" alt="Sapphire 1" loading="lazy" /></div>
+      <div class="gallery-item" onclick="openLightbox('images/gold/gold-2.jpg')"><img src="images/gold/gold-2.jpg" alt="Gold 2" loading="lazy" /></div>
+      <div class="gallery-item" onclick="openLightbox('images/diamond/diamond-2.jpg')"><img src="images/diamond/diamond-2.jpg" alt="Diamond 2" loading="lazy" /></div>
+      <div class="gallery-item" onclick="openLightbox('images/sapphire/sapphire-2.jpg')"><img src="images/sapphire/sapphire-2.jpg" alt="Sapphire 2" loading="lazy" /></div>
+      <!-- Extra items (hidden initially) -->
+      <div class="gallery-item hidden" onclick="openLightbox('images/gold/gold-3.jpg')"><img src="images/gold/gold-3.jpg" alt="Gold 3" loading="lazy" /></div>
+      <div class="gallery-item hidden" onclick="openLightbox('images/diamond/diamond-3.jpg')"><img src="images/diamond/diamond-3.jpg" alt="Diamond 3" loading="lazy" /></div>
+      <div class="gallery-item hidden" onclick="openLightbox('images/sapphire/sapphire-3.jpg')"><img src="images/sapphire/sapphire-3.jpg" alt="Sapphire 3" loading="lazy" /></div>
+      <div class="gallery-item hidden" onclick="openLightbox('images/gold/gold-4.jpg')"><img src="images/gold/gold-4.jpg" alt="Gold 4" loading="lazy" /></div>
+      <div class="gallery-item hidden" onclick="openLightbox('images/diamond/diamond-4.jpg')"><img src="images/diamond/diamond-4.jpg" alt="Diamond 4" loading="lazy" /></div>
+      <div class="gallery-item hidden" onclick="openLightbox('images/sapphire/sapphire-4.jpeg')"><img src="images/sapphire/sapphire-4.jpeg" alt="Sapphire 4" loading="lazy" /></div>
+      <div class="gallery-item hidden" onclick="openLightbox('images/hortensia/hortensia-1.jpg')"><img src="images/hortensia/hortensia-1.jpg" alt="Hortensia 1" loading="lazy" /></div>
+      <div class="gallery-item hidden" onclick="openLightbox('images/hortensia/hortensia-2.jpg')"><img src="images/hortensia/hortensia-2.jpg" alt="Hortensia 2" loading="lazy" /></div>
+      <div class="gallery-item hidden" onclick="openLightbox('images/hortensia/hortensia-3.jpg')"><img src="images/hortensia/hortensia-3.jpg" alt="Hortensia 3" loading="lazy" /></div>
+    </div>
+    <div class="gallery-more-wrap fade-up delay-2">
+      <button class="btn btn-outline" id="galleryToggleBtn" onclick="toggleGallery()">Lihat Lebih Banyak</button>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ITEM DEKORASI ═══ -->
+<section id="dekor" class="section">
+  <div class="container">
+    <div class="text-center fade-up">
+      <span class="section-label">Pelengkap Pernikahan</span>
+      <h2 class="section-title">Item Dekorasi<br>Tersedia</h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">Lengkapi pernikahanmu dengan koleksi item dekorasi pilihan kami.</p>
+    </div>
+    <div class="dekor-grid fade-up delay-1">
+      <div class="dekor-item">
+        <div class="dekor-img-wrap"><img src="images/dekor/bunga-jalan-lampu.jpg" alt="Bunga Jalan + Lampu" loading="lazy" /></div>
+        <div class="dekor-caption">Bunga Jalan & Lampu</div>
+      </div>
+      <div class="dekor-item">
+        <div class="dekor-img-wrap"><img src="images/dekor/lampu-kristal.jpg" alt="Lampu Kristal" loading="lazy" /></div>
+        <div class="dekor-caption">Lampu Kristal</div>
+      </div>
+      <div class="dekor-item">
+        <div class="dekor-img-wrap"><img src="images/dekor/meja-akad.jpeg" alt="Meja Akad" loading="lazy" /></div>
+        <div class="dekor-caption">Meja Akad</div>
+      </div>
+      <div class="dekor-item">
+        <div class="dekor-img-wrap"><img src="images/dekor/meja-dessert.jpeg" alt="Meja Dessert" loading="lazy" /></div>
+        <div class="dekor-caption">Meja Dessert</div>
+      </div>
+      <div class="dekor-item">
+        <div class="dekor-img-wrap"><img src="images/dekor/pelaminan-outdoor.jpg" alt="Pelaminan Outdoor" loading="lazy" /></div>
+        <div class="dekor-caption">Pelaminan Outdoor</div>
+      </div>
+      <div class="dekor-item">
+        <div class="dekor-img-wrap"><img src="images/dekor/pergola-masuk.jpg" alt="Pergola Masuk" loading="lazy" /></div>
+        <div class="dekor-caption">Pergola Masuk</div>
+      </div>
+      <div class="dekor-item">
+        <div class="dekor-img-wrap"><img src="images/dekor/tenda-putih.jpg" alt="Tenda Putih" loading="lazy" /></div>
+        <div class="dekor-caption">Tenda Putih</div>
+      </div>
+      <div class="dekor-item">
+        <div class="dekor-img-wrap"><img src="images/dekor/wedding-sign.jpg" alt="Wedding Sign" loading="lazy" /></div>
+        <div class="dekor-caption">Wedding Sign</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BOOKING ═══ -->
+<section id="booking" class="section">
+  <div class="container">
+    <div class="text-center fade-up">
+      <span class="section-label">Reservasi</span>
+      <h2 class="section-title">Cek Ketersediaan<br>&amp; Booking Slot</h2>
+      <div class="divider"></div>
+      <p class="section-subtitle" style="color: rgba(250,247,242,0.6);">Pilih tanggal pernikahanmu dan pastikan slot masih tersedia.</p>
+    </div>
+    <div class="booking-wrapper fade-up delay-1">
+      <!-- Calendar -->
+      <div class="calendar-section">
+        <div class="cal-header">
+          <div class="cal-title" id="calTitle">Maret 2026</div>
+          <div class="cal-nav">
+            <button class="cal-btn" onclick="changeMonth(-1)">&#8249;</button>
+            <button class="cal-btn" onclick="changeMonth(1)">&#8250;</button>
+          </div>
+        </div>
+        <div class="cal-grid" id="calGrid"></div>
+        <div class="cal-legend">
+          <div class="legend-item"><div class="legend-dot available"></div> Tersedia</div>
+          <div class="legend-item"><div class="legend-dot booked-dot"></div> Sudah Dibooking</div>
+          <div class="legend-item"><div class="legend-dot past-dot"></div> Tanggal Lewat</div>
+        </div>
+        <div class="cal-status" id="calStatus"></div>
+      </div>
+      <!-- Form -->
+      <div class="booking-form-section">
+        <div class="form-title">Form Booking</div>
+        <div class="form-date-display" id="formDateDisplay">
+          📅 Tanggal: <span id="formDateText">—</span>
+        </div>
+        <div class="form-group">
+          <label>Nama Pengantin *</label>
+          <input type="text" id="fNama" placeholder="Nama lengkap pengantin" />
+        </div>
+        <div class="form-group">
+          <label>No WhatsApp *</label>
+          <input type="tel" id="fWa" placeholder="Contoh: 08123456789" />
+        </div>
+        <div class="form-group">
+          <label>Paket Dekorasi *</label>
+          <select id="fPaket">
+            <option value="">— Pilih Paket —</option>
+            <option value="Gold">Paket Gold</option>
+            <option value="Diamond">Paket Diamond</option>
+            <option value="Sapphire">Paket Sapphire</option>
+            <option value="Hortensia">Paket Hortensia</option>
+            <option value="Custom">Paket Custom</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Lokasi Acara *</label>
+          <input type="text" id="fLokasi" placeholder="Nama gedung / alamat" />
+        </div>
+        <div class="form-group">
+          <label>Catatan</label>
+          <textarea id="fCatatan" placeholder="Tema warna, konsep, atau permintaan khusus..."></textarea>
+        </div>
+        <button class="btn btn-wa" style="width:100%; justify-content:center;" onclick="submitBooking()">
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.122 1.523 5.863L0 24l6.303-1.494A11.956 11.956 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.015-1.375l-.36-.213-3.737.885.921-3.634-.235-.374A9.818 9.818 0 1112 21.818z"/></svg>
+          Konfirmasi via WhatsApp
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TESTIMONIAL ═══ -->
+<section id="testimonial" class="section">
+  <div class="container">
+    <div class="text-center fade-up">
+      <span class="section-label">Kata Mereka</span>
+      <h2 class="section-title">Testimoni<br>Pengantin Bahagia</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="testi-image-wrap fade-up delay-1">
+      <img src="images/testimonial.png" alt="Testimonial Allessia Wedding" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TERMS ═══ -->
+<section id="terms" class="section">
+  <div class="container">
+    <div class="text-center fade-up">
+      <span class="section-label">Informasi Penting</span>
+      <h2 class="section-title">Syarat &amp; Ketentuan</h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">Harap dibaca sebelum melakukan pemesanan.</p>
+    </div>
+    <div class="terms-toggle fade-up delay-1">
+      <button class="btn btn-outline" id="termsBtn" onclick="toggleTerms()">Lihat Syarat &amp; Ketentuan</button>
+    </div>
+    <div class="terms-content" id="termsContent">
+      <img src="images/terms-condition.png" alt="Syarat dan Ketentuan Allessia Wedding" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer id="kontak">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="images/logo-white.jpg" alt="Allessia Wedding" />
+        <p>Jl. [Alamat Allessia Wedding]<br>— Harap diperbarui —</p>
+        <br>
+        <div class="footer-social">
+          <a href="https://instagram.com/allessia.wedding" target="_blank" class="social-icon" title="Instagram">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="https://wa.me/6281234567890" target="_blank" class="social-icon" title="WhatsApp">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.122 1.523 5.863L0 24l6.303-1.494A11.956 11.956 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.015-1.375l-.36-.213-3.737.885.921-3.634-.235-.374A9.818 9.818 0 1112 21.818z"/></svg>
+          </a>
+          <a href="https://tiktok.com/@allessia.wedding" target="_blank" class="social-icon" title="TikTok">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigasi</h4>
+        <ul>
+          <li><a href="#hero">Beranda</a></li>
+          <li><a href="#paket">Paket Dekorasi</a></li>
+          <li><a href="#galeri">Galeri</a></li>
+          <li><a href="#booking">Booking Slot</a></li>
+          <li><a href="#testimonial">Testimoni</a></li>
+          <li><a href="#terms">Syarat & Ketentuan</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Kontak</h4>
+        <ul>
+          <li><a href="https://wa.me/6281234567890" target="_blank">📱 0812-3456-7890</a></li>
+          <li><a href="https://instagram.com/allessia.wedding" target="_blank">📷 @allessia.wedding</a></li>
+          <li><a href="#">📍 Jl. [Alamat]</a></li>
+        </ul>
+        <br>
+        <h4>Jam Operasional</h4>
+        <ul>
+          <li><a>Senin – Sabtu</a></li>
+          <li><a>08.00 – 20.00 WIB</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Allessia Wedding. All rights reserved.</p>
+      <p>Dibuat dengan ❤ untuk setiap pasangan bahagia</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══ LIGHTBOX ═══ -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <span class="lightbox-close" onclick="closeLightbox()">×</span>
+  <img src="" alt="" id="lightboxImg" onclick="event.stopPropagation()" />
+</div>
+
+<!-- ═══ JAVASCRIPT ═══ -->
+<script>
+  // ─── NAVBAR SCROLL ───
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // ─── HERO ANIMATION ───
+  document.getElementById('hero').classList.add('loaded');
+
+  // ─── MOBILE MENU ───
+  function toggleMenu() {
+    document.getElementById('hamburger').classList.toggle('open');
+    document.getElementById('mobileMenu').classList.toggle('open');
+    document.body.style.overflow = document.getElementById('mobileMenu').classList.contains('open') ? 'hidden' : '';
+  }
+
+  // ─── FADE-IN OBSERVER ───
+  const fadeEls = document.querySelectorAll('.fade-up');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+  fadeEls.forEach(el => observer.observe(el));
+
+  // ─── GALLERY TOGGLE ───
+  let galleryOpen = false;
+  function toggleGallery() {
+    galleryOpen = !galleryOpen;
+    document.querySelectorAll('.gallery-item.hidden, .gallery-item.show').forEach(el => {
+      if (el.classList.contains('hidden') && galleryOpen) {
+        el.classList.remove('hidden'); el.classList.add('show');
+      } else if (el.classList.contains('show') && !galleryOpen) {
+        el.classList.remove('show'); el.classList.add('hidden');
+      }
+    });
+    document.getElementById('galleryToggleBtn').textContent = galleryOpen ? 'Sembunyikan' : 'Lihat Lebih Banyak';
+  }
+
+  // ─── LIGHTBOX ───
+  function openLightbox(src) {
+    document.getElementById('lightboxImg').src = src;
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+  // ─── TERMS TOGGLE ───
+  function toggleTerms() {
+    const content = document.getElementById('termsContent');
+    const btn = document.getElementById('termsBtn');
+    content.classList.toggle('open');
+    btn.textContent = content.classList.contains('open') ? 'Sembunyikan' : 'Lihat Syarat & Ketentuan';
+  }
+
+  // ─── BOOKING CALENDAR ───
+  // ⚠️ UPDATE THIS ARRAY to manage booked dates:
+  const BOOKED_DATES = [
+    '2026-03-15', '2026-03-22',
+    '2026-04-05', '2026-04-12',
+    '2026-04-19', '2026-05-03',
+    '2026-05-10', '2026-05-24',
+  ];
+
+  const MONTH_NAMES_ID = ['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
+  const DAY_LABELS = ['Sen','Sel','Rab','Kam','Jum','Sab','Min'];
+
+  let calYear = 2026;
+  let calMonth = 2; // 0-indexed: March = 2
+  let selectedDate = null;
+
+  function renderCalendar() {
+    const grid = document.getElementById('calGrid');
+    grid.innerHTML = '';
+    document.getElementById('calTitle').textContent = MONTH_NAMES_ID[calMonth] + ' ' + calYear;
+
+    DAY_LABELS.forEach(d => {
+      const el = document.createElement('div');
+      el.className = 'cal-day-label';
+      el.textContent = d;
+      grid.appendChild(el);
+    });
+
+    const firstDay = new Date(calYear, calMonth, 1).getDay(); // Sun=0
+    const offset = (firstDay + 6) % 7; // Mon=0
+    const daysInMonth = new Date(calYear, calMonth + 1, 0).getDate();
+    const today = new Date(); today.setHours(0,0,0,0);
+
+    for (let i = 0; i < offset; i++) {
+      const el = document.createElement('div');
+      el.className = 'cal-day empty';
+      grid.appendChild(el);
+    }
+
+    for (let d = 1; d <= daysInMonth; d++) {
+      const date = new Date(calYear, calMonth, d);
+      const dateStr = `${calYear}-${String(calMonth+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+      const el = document.createElement('div');
+      el.className = 'cal-day';
+      el.textContent = d;
+
+      if (date < today) {
+        el.classList.add('past');
+      } else if (BOOKED_DATES.includes(dateStr)) {
+        el.classList.add('booked');
+        el.title = 'Sudah dibooking';
+      } else {
+        el.onclick = () => selectDate(dateStr, d);
+      }
+
+      if (selectedDate === dateStr) el.classList.add('selected');
+      grid.appendChild(el);
+    }
+  }
+
+  function selectDate(dateStr, day) {
+    selectedDate = dateStr;
+    renderCalendar();
+
+    const parts = dateStr.split('-');
+    const niceDateStr = day + ' ' + MONTH_NAMES_ID[parseInt(parts[1])-1] + ' ' + parts[0];
+
+    const status = document.getElementById('calStatus');
+    status.className = 'cal-status show available';
+    status.innerHTML = `✅ <strong>${niceDateStr}</strong> — Tersedia untuk dibooking!`;
+
+    const dateDisplay = document.getElementById('formDateDisplay');
+    dateDisplay.classList.add('show');
+    document.getElementById('formDateText').textContent = niceDateStr;
+  }
+
+  function changeMonth(dir) {
+    calMonth += dir;
+    if (calMonth < 0) { calMonth = 11; calYear--; }
+    if (calMonth > 11) { calMonth = 0; calYear++; }
+    renderCalendar();
+  }
+
+  function submitBooking() {
+    const nama = document.getElementById('fNama').value.trim();
+    const wa = document.getElementById('fWa').value.trim();
+    const paket = document.getElementById('fPaket').value;
+    const lokasi = document.getElementById('fLokasi').value.trim();
+    const catatan = document.getElementById('fCatatan').value.trim();
+    const tanggal = document.getElementById('formDateText').textContent;
+
+    if (!selectedDate) { alert('⚠️ Silakan pilih tanggal terlebih dahulu.'); return; }
+    if (!nama) { alert('⚠️ Nama pengantin wajib diisi.'); return; }
+    if (!wa) { alert('⚠️ No WhatsApp wajib diisi.'); return; }
+    if (!paket) { alert('⚠️ Silakan pilih paket dekorasi.'); return; }
+    if (!lokasi) { alert('⚠️ Lokasi acara wajib diisi.'); return; }
+
+    const msg = `Halo Allessia Wedding! 🌸
+Saya ingin booking dekorasi:
+
+👰 Nama: ${nama}
+📅 Tanggal: ${tanggal}
+💍 Paket: ${paket}
+📍 Lokasi: ${lokasi}
+📱 No WA: ${wa}
+📝 Catatan: ${catatan || '-'}
+
+Mohon konfirmasi ketersediaan. Terima kasih!`;
+
+    const url = `https://wa.me/6281234567890?text=${encodeURIComponent(msg)}`;
+    window.open(url, '_blank');
+  }
+
+  // Init calendar
+  renderCalendar();
+</script>
+</body>
+</html>
