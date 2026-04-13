@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://allessia-wedding.vercel.app/</loc>
+    <lastmod>2026-04-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://allessia-wedding.vercel.app/images/hero.jpeg</image:loc>
+      <image:title>Allessia Wedding — Dekorasi Pernikahan Elegan</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://allessia-wedding.vercel.app/images/gold/gold-1.jpeg</image:loc>
+      <image:title>Paket Gold — Dekorasi Pernikahan Mewah</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://allessia-wedding.vercel.app/images/diamond/diamond-1.jpg</image:loc>
+      <image:title>Paket Diamond — Royal Luxury Wedding</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://allessia-wedding.vercel.app/images/sapphire/sapphire-1.jpeg</image:loc>
+      <image:title>Paket Sapphire — Modern Elegant Wedding</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://allessia-wedding.vercel.app/images/hortensia/hortensia-1.jpg</image:loc>
+      <image:title>Paket Hortensia — Romantic Floral Wedding</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://allessia-wedding.vercel.app/#paket</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://allessia-wedding.vercel.app/#galeri</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://allessia-wedding.vercel.app/#design</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://allessia-wedding.vercel.app/#booking</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://allessia-wedding.vercel.app/#areas</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://allessia-wedding.vercel.app/#faq</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+</urlset>
