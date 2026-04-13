@@ -535,6 +535,59 @@
       text-align: center;
       position: relative;
     }
+    /* Variant with image (used for theme step) */
+    .design-option.with-image {
+      padding: 0;
+      overflow: hidden;
+    }
+    .design-opt-img {
+      position: relative;
+      width: 100%;
+      height: 160px;
+      overflow: hidden;
+    }
+    .design-opt-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .design-option.with-image:hover .design-opt-img img { transform: scale(1.06); }
+    .design-opt-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(20,15,10,0.35) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    .design-option.with-image .design-opt-body {
+      padding: 16px 14px 18px;
+    }
+    .design-check {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.85);
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 700;
+      opacity: 0;
+      transform: scale(0.8);
+      transition: all 0.25s ease;
+      z-index: 2;
+    }
+    .design-option.selected .design-check {
+      opacity: 1;
+      transform: scale(1);
+      background: var(--white);
+      color: var(--gold);
+    }
     .design-option:hover {
       border-color: var(--gold);
       transform: translateY(-2px);
@@ -639,6 +692,73 @@
       transition: border-color 0.2s;
     }
     .design-notes textarea:focus { border-color: var(--gold); }
+    /* Detail input grid (Step 5) */
+    .design-details {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .design-field {
+      display: flex;
+      flex-direction: column;
+    }
+    .design-field.full { grid-column: 1 / -1; }
+    .design-field label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .design-field input,
+    .design-field select {
+      background: var(--white);
+      border: 1px solid rgba(201,169,110,0.25);
+      border-radius: 2px;
+      padding: 12px 16px;
+      font-family: var(--font-sans);
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--charcoal);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .design-field input::placeholder { color: rgba(44,44,44,0.35); }
+    .design-field input:focus,
+    .design-field select:focus { border-color: var(--gold); }
+    .design-field select { cursor: pointer; }
+    .color-palette {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 4px;
+    }
+    .color-swatch {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 12px;
+      background: var(--white);
+      border: 1px solid rgba(201,169,110,0.25);
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 12px;
+      color: var(--charcoal);
+      transition: all 0.2s;
+    }
+    .color-swatch:hover { border-color: var(--gold); }
+    .color-swatch.selected {
+      border-color: var(--gold);
+      background: rgba(201,169,110,0.1);
+      font-weight: 500;
+    }
+    .color-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 1px solid rgba(0,0,0,0.08);
+    }
     .design-submit {
       text-align: center;
       margin-top: 24px;
@@ -995,12 +1115,15 @@
       .design-options, .design-options.cols-4 { grid-template-columns: repeat(2, 1fr); }
       .design-summary-list li { flex-direction: column; gap: 4px; }
       .design-summary-list .summary-value { text-align: left; }
+      .design-details { grid-template-columns: 1fr; }
+      .design-opt-img { height: 140px; }
     }
     @media (max-width: 480px) {
       .packages-grid { grid-template-columns: 1fr; }
       .gallery-grid { columns: 1; }
       .dekor-grid { grid-template-columns: repeat(2, 1fr); }
       .design-options, .design-options.cols-4 { grid-template-columns: 1fr; }
+      .design-opt-img { height: 180px; }
     }
   </style>
 </head>
@@ -1239,35 +1362,53 @@
       <div class="design-step">
         <div class="design-step-label"><span class="design-step-num">1</span> Pilih Konsep / Tema</div>
         <div class="design-options cols-3" data-group="style">
-          <div class="design-option" data-value="Classic Elegant">
-            <span class="design-opt-icon">✦</span>
-            <div class="design-opt-title">Classic Elegant</div>
-            <div class="design-opt-desc">Mewah klasik, nuansa emas dan krem.</div>
+          <div class="design-option with-image" data-value="Classic Elegant">
+            <div class="design-check">✓</div>
+            <div class="design-opt-img"><img src="images/gold/gold-1.jpeg" alt="Classic Elegant" loading="lazy" /></div>
+            <div class="design-opt-body">
+              <div class="design-opt-title">Classic Elegant</div>
+              <div class="design-opt-desc">Mewah klasik, nuansa emas dan krem.</div>
+            </div>
           </div>
-          <div class="design-option" data-value="Royal Luxury">
-            <span class="design-opt-icon">♛</span>
-            <div class="design-opt-title">Royal Luxury</div>
-            <div class="design-opt-desc">Megah ala kerajaan dengan ornamen kristal.</div>
+          <div class="design-option with-image" data-value="Royal Luxury">
+            <div class="design-check">✓</div>
+            <div class="design-opt-img"><img src="images/diamond/diamond-1.jpg" alt="Royal Luxury" loading="lazy" /></div>
+            <div class="design-opt-body">
+              <div class="design-opt-title">Royal Luxury</div>
+              <div class="design-opt-desc">Megah ala kerajaan dengan ornamen kristal.</div>
+            </div>
           </div>
-          <div class="design-option" data-value="Modern Minimalist">
-            <span class="design-opt-icon">◇</span>
-            <div class="design-opt-title">Modern Minimalist</div>
-            <div class="design-opt-desc">Bersih, modern, dan estetik kekinian.</div>
+          <div class="design-option with-image" data-value="Modern Minimalist">
+            <div class="design-check">✓</div>
+            <div class="design-opt-img"><img src="images/sapphire/sapphire-1.jpeg" alt="Modern Minimalist" loading="lazy" /></div>
+            <div class="design-opt-body">
+              <div class="design-opt-title">Modern Minimalist</div>
+              <div class="design-opt-desc">Bersih, modern, dan estetik kekinian.</div>
+            </div>
           </div>
-          <div class="design-option" data-value="Romantic Floral">
-            <span class="design-opt-icon">❀</span>
-            <div class="design-opt-title">Romantic Floral</div>
-            <div class="design-opt-desc">Penuh bunga segar, romantis dan lembut.</div>
+          <div class="design-option with-image" data-value="Romantic Floral">
+            <div class="design-check">✓</div>
+            <div class="design-opt-img"><img src="images/hortensia/hortensia-1.jpg" alt="Romantic Floral" loading="lazy" /></div>
+            <div class="design-opt-body">
+              <div class="design-opt-title">Romantic Floral</div>
+              <div class="design-opt-desc">Penuh bunga segar, romantis dan lembut.</div>
+            </div>
           </div>
-          <div class="design-option" data-value="Rustic Garden">
-            <span class="design-opt-icon">❦</span>
-            <div class="design-opt-title">Rustic Garden</div>
-            <div class="design-opt-desc">Natural, hangat, sentuhan kayu dan dedaunan.</div>
+          <div class="design-option with-image" data-value="Rustic Garden">
+            <div class="design-check">✓</div>
+            <div class="design-opt-img"><img src="images/dekor/pelaminan-outdoor.jpg" alt="Rustic Garden" loading="lazy" /></div>
+            <div class="design-opt-body">
+              <div class="design-opt-title">Rustic Garden</div>
+              <div class="design-opt-desc">Natural, hangat, sentuhan kayu dan dedaunan.</div>
+            </div>
           </div>
-          <div class="design-option" data-value="Adat Tradisional">
-            <span class="design-opt-icon">✺</span>
-            <div class="design-opt-title">Adat Tradisional</div>
-            <div class="design-opt-desc">Budaya nusantara — Jawa, Sunda, Minang, dll.</div>
+          <div class="design-option with-image" data-value="Adat Tradisional">
+            <div class="design-check">✓</div>
+            <div class="design-opt-img"><img src="images/dekor/meja-akad.jpeg" alt="Adat Tradisional" loading="lazy" /></div>
+            <div class="design-opt-body">
+              <div class="design-opt-title">Adat Tradisional</div>
+              <div class="design-opt-desc">Budaya nusantara — Jawa, Sunda, Minang, dll.</div>
+            </div>
           </div>
         </div>
       </div>
@@ -1359,6 +1500,83 @@
         </div>
       </div>
 
+      <!-- STEP 5 — DETAIL KEINGINAN -->
+      <div class="design-step">
+        <div class="design-step-label"><span class="design-step-num">5</span> Detail Keinginan Wedding</div>
+        <div class="design-details">
+          <div class="design-field">
+            <label>Jenis Acara</label>
+            <select id="dEventType">
+              <option value="">— Pilih Jenis Acara —</option>
+              <option>Akad Nikah Saja</option>
+              <option>Resepsi Saja</option>
+              <option>Akad + Resepsi (1 Hari)</option>
+              <option>Akad + Resepsi (2 Hari)</option>
+              <option>Engagement / Lamaran</option>
+              <option>Intimate Wedding</option>
+            </select>
+          </div>
+          <div class="design-field">
+            <label>Waktu Acara</label>
+            <select id="dEventTime">
+              <option value="">— Pilih Waktu —</option>
+              <option>Pagi (07.00 – 11.00)</option>
+              <option>Siang (11.00 – 14.00)</option>
+              <option>Sore (14.00 – 17.00)</option>
+              <option>Malam (18.00 – 22.00)</option>
+              <option>Sepanjang Hari</option>
+            </select>
+          </div>
+          <div class="design-field">
+            <label>Kota / Daerah Acara</label>
+            <input type="text" id="dCity" placeholder="Contoh: Jakarta Selatan, Bandung, Bali..." />
+          </div>
+          <div class="design-field">
+            <label>Target Tanggal (jika sudah ada)</label>
+            <input type="text" id="dTargetDate" placeholder="Contoh: Oktober 2026 / 12 Des 2026" />
+          </div>
+          <div class="design-field">
+            <label>Nama Pengantin</label>
+            <input type="text" id="dCoupleName" placeholder="Contoh: Rina & Adit" />
+          </div>
+          <div class="design-field">
+            <label>No WhatsApp</label>
+            <input type="tel" id="dWhatsapp" placeholder="Contoh: 08123456789" />
+          </div>
+          <div class="design-field full">
+            <label>Palet Warna Dominan (pilih beberapa)</label>
+            <div class="color-palette" id="colorPalette">
+              <div class="color-swatch" data-color="Putih & Gold"><span class="color-dot" style="background:#f7f0d8"></span>Putih & Gold</div>
+              <div class="color-swatch" data-color="Dusty Pink"><span class="color-dot" style="background:#d8a7a0"></span>Dusty Pink</div>
+              <div class="color-swatch" data-color="Sage Green"><span class="color-dot" style="background:#9caf88"></span>Sage Green</div>
+              <div class="color-swatch" data-color="Burgundy"><span class="color-dot" style="background:#800020"></span>Burgundy</div>
+              <div class="color-swatch" data-color="Navy Blue"><span class="color-dot" style="background:#1b2a4e"></span>Navy Blue</div>
+              <div class="color-swatch" data-color="Pastel Mix"><span class="color-dot" style="background:linear-gradient(135deg,#f7c7d7,#c7e0f7,#d7f7c7)"></span>Pastel Mix</div>
+              <div class="color-swatch" data-color="Earth Tone"><span class="color-dot" style="background:#b08968"></span>Earth Tone</div>
+              <div class="color-swatch" data-color="All White"><span class="color-dot" style="background:#ffffff;border:1px solid #ccc"></span>All White</div>
+              <div class="color-swatch" data-color="Black & Gold"><span class="color-dot" style="background:linear-gradient(135deg,#1a1a1a 50%,#c9a96e 50%)"></span>Black & Gold</div>
+            </div>
+          </div>
+          <div class="design-field full">
+            <label>Elemen yang Diinginkan (pilih beberapa)</label>
+            <div class="color-palette" id="elementPalette">
+              <div class="color-swatch" data-element="Pelaminan Megah">✦ Pelaminan Megah</div>
+              <div class="color-swatch" data-element="Photobooth">📸 Photobooth</div>
+              <div class="color-swatch" data-element="Flower Wall">❀ Flower Wall</div>
+              <div class="color-swatch" data-element="Lampu Kristal">✧ Lampu Kristal</div>
+              <div class="color-swatch" data-element="Pergola Masuk">⛩ Pergola Masuk</div>
+              <div class="color-swatch" data-element="Meja Dessert">🍰 Meja Dessert</div>
+              <div class="color-swatch" data-element="Wedding Sign">❦ Wedding Sign</div>
+              <div class="color-swatch" data-element="Aisle Bunga">🌹 Aisle Bunga</div>
+              <div class="color-swatch" data-element="Panggung Band">🎤 Panggung Band</div>
+              <div class="color-swatch" data-element="Tenda Outdoor">⛺ Tenda Outdoor</div>
+              <div class="color-swatch" data-element="Bubble / Smoke Effect">☁ Bubble / Smoke</div>
+              <div class="color-swatch" data-element="Fireworks">🎆 Fireworks</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- SUMMARY -->
       <div class="design-summary">
         <div class="design-summary-title">Ringkasan Design Anda</div>
@@ -1367,10 +1585,12 @@
           <li><span class="summary-label">Range Budget</span><span class="summary-value empty" id="sumBudget">Belum dipilih</span></li>
           <li><span class="summary-label">Tipe Lokasi</span><span class="summary-value empty" id="sumLocation">Belum dipilih</span></li>
           <li><span class="summary-label">Jumlah Tamu</span><span class="summary-value empty" id="sumGuests">Belum dipilih</span></li>
+          <li><span class="summary-label">Palet Warna</span><span class="summary-value empty" id="sumColors">Belum dipilih</span></li>
+          <li><span class="summary-label">Elemen Dekor</span><span class="summary-value empty" id="sumElements">Belum dipilih</span></li>
         </ul>
         <div class="design-notes">
           <label>Catatan / Permintaan Khusus</label>
-          <textarea id="designNotes" placeholder="Contoh: dominasi warna pastel, ada area photobooth, panggung untuk band akustik, dll."></textarea>
+          <textarea id="designNotes" placeholder="Contoh: ada area welcome drink, live musik akustik, hadiah souvenir khusus, dll."></textarea>
         </div>
       </div>
 
@@ -1723,6 +1943,8 @@ Mohon konfirmasi ketersediaan. Terima kasih!`;
   // ─── DESIGN YOUR WEDDING ───
   const designSelections = { style: null, budget: null, location: null, guests: null };
   const sumIds = { style: 'sumStyle', budget: 'sumBudget', location: 'sumLocation', guests: 'sumGuests' };
+  const selectedColors = new Set();
+  const selectedElements = new Set();
 
   document.querySelectorAll('.design-options').forEach(group => {
     const groupName = group.getAttribute('data-group');
@@ -1739,23 +1961,87 @@ Mohon konfirmasi ketersediaan. Terima kasih!`;
     });
   });
 
+  // Multi-select: colors
+  document.querySelectorAll('#colorPalette .color-swatch').forEach(sw => {
+    sw.addEventListener('click', () => {
+      const color = sw.getAttribute('data-color');
+      if (selectedColors.has(color)) {
+        selectedColors.delete(color); sw.classList.remove('selected');
+      } else {
+        selectedColors.add(color); sw.classList.add('selected');
+      }
+      const el = document.getElementById('sumColors');
+      if (selectedColors.size === 0) {
+        el.textContent = 'Belum dipilih'; el.classList.add('empty');
+      } else {
+        el.textContent = [...selectedColors].join(', '); el.classList.remove('empty');
+      }
+    });
+  });
+
+  // Multi-select: elements
+  document.querySelectorAll('#elementPalette .color-swatch').forEach(sw => {
+    sw.addEventListener('click', () => {
+      const elm = sw.getAttribute('data-element');
+      if (selectedElements.has(elm)) {
+        selectedElements.delete(elm); sw.classList.remove('selected');
+      } else {
+        selectedElements.add(elm); sw.classList.add('selected');
+      }
+      const el = document.getElementById('sumElements');
+      if (selectedElements.size === 0) {
+        el.textContent = 'Belum dipilih'; el.classList.add('empty');
+      } else {
+        el.textContent = [...selectedElements].join(', '); el.classList.remove('empty');
+      }
+    });
+  });
+
   function submitDesign() {
     const { style, budget, location, guests } = designSelections;
-    const notes = document.getElementById('designNotes').value.trim();
+    const eventType  = document.getElementById('dEventType').value;
+    const eventTime  = document.getElementById('dEventTime').value;
+    const city       = document.getElementById('dCity').value.trim();
+    const targetDate = document.getElementById('dTargetDate').value.trim();
+    const coupleName = document.getElementById('dCoupleName').value.trim();
+    const whatsapp   = document.getElementById('dWhatsapp').value.trim();
+    const notes      = document.getElementById('designNotes').value.trim();
+    const colors     = [...selectedColors];
+    const elements   = [...selectedElements];
 
-    if (!style)    { alert('⚠️ Silakan pilih konsep / tema terlebih dahulu.'); return; }
-    if (!budget)   { alert('⚠️ Silakan pilih range budget.'); return; }
-    if (!location) { alert('⚠️ Silakan pilih tipe lokasi acara.'); return; }
-    if (!guests)   { alert('⚠️ Silakan pilih jumlah tamu undangan.'); return; }
+    if (!style)      { alert('⚠️ Silakan pilih konsep / tema terlebih dahulu.'); return; }
+    if (!budget)     { alert('⚠️ Silakan pilih range budget.'); return; }
+    if (!location)   { alert('⚠️ Silakan pilih tipe lokasi acara.'); return; }
+    if (!guests)     { alert('⚠️ Silakan pilih jumlah tamu undangan.'); return; }
+    if (!eventType)  { alert('⚠️ Silakan pilih jenis acara.'); return; }
+    if (!eventTime)  { alert('⚠️ Silakan pilih waktu acara.'); return; }
+    if (!city)       { alert('⚠️ Kota / daerah acara wajib diisi.'); return; }
+    if (!coupleName) { alert('⚠️ Nama pengantin wajib diisi.'); return; }
+    if (!whatsapp)   { alert('⚠️ No WhatsApp wajib diisi.'); return; }
 
     const msg = `Halo Allessia Wedding! 🌸
 Saya ingin custom design pernikahan dengan detail berikut:
 
-✦ Konsep / Tema : ${style}
-💰 Range Budget : ${budget}
-📍 Tipe Lokasi  : ${location}
-👥 Jumlah Tamu  : ${guests}
-📝 Catatan      : ${notes || '-'}
+👰 Nama Pengantin : ${coupleName}
+📱 No WhatsApp    : ${whatsapp}
+
+━━━ KONSEP UTAMA ━━━
+✦ Konsep / Tema   : ${style}
+💰 Range Budget   : ${budget}
+📍 Tipe Lokasi    : ${location}
+👥 Jumlah Tamu    : ${guests}
+
+━━━ DETAIL ACARA ━━━
+🎎 Jenis Acara    : ${eventType}
+🕒 Waktu Acara    : ${eventTime}
+🏙 Kota / Daerah  : ${city}
+📅 Target Tanggal : ${targetDate || '-'}
+
+━━━ PREFERENSI ━━━
+🎨 Palet Warna    : ${colors.length ? colors.join(', ') : '-'}
+✨ Elemen Dekor   : ${elements.length ? elements.join(', ') : '-'}
+
+📝 Catatan        : ${notes || '-'}
 
 Mohon info lebih lanjut & rekomendasi dekorasinya. Terima kasih!`;
 
