@@ -482,6 +482,168 @@
       color: var(--charcoal);
     }
 
+    /* ─── DESIGN YOUR WEDDING ─── */
+    #design { background: var(--white); }
+    .design-wrapper {
+      margin-top: 52px;
+      background: var(--cream);
+      border: 1px solid rgba(201,169,110,0.25);
+      border-radius: 4px;
+      padding: 44px;
+    }
+    .design-step {
+      margin-bottom: 36px;
+    }
+    .design-step:last-of-type { margin-bottom: 28px; }
+    .design-step-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 18px;
+    }
+    .design-step-num {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .design-options {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .design-options.cols-4 { grid-template-columns: repeat(4, 1fr); }
+    .design-options.cols-2 { grid-template-columns: repeat(2, 1fr); }
+    .design-option {
+      background: var(--white);
+      border: 1px solid rgba(201,169,110,0.25);
+      border-radius: 3px;
+      padding: 18px 16px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      text-align: center;
+      position: relative;
+    }
+    .design-option:hover {
+      border-color: var(--gold);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(201,169,110,0.15);
+    }
+    .design-option.selected {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--white);
+    }
+    .design-option.selected .design-opt-title { color: var(--white); }
+    .design-option.selected .design-opt-desc { color: rgba(255,255,255,0.85); }
+    .design-opt-icon {
+      font-size: 24px;
+      color: var(--gold);
+      margin-bottom: 8px;
+      display: block;
+    }
+    .design-option.selected .design-opt-icon { color: var(--white); }
+    .design-opt-title {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--charcoal);
+      margin-bottom: 4px;
+    }
+    .design-opt-desc {
+      font-size: 11px;
+      color: var(--gray);
+      line-height: 1.5;
+    }
+    .design-summary {
+      background: var(--white);
+      border: 1px dashed rgba(201,169,110,0.4);
+      border-radius: 3px;
+      padding: 24px;
+      margin-top: 28px;
+      margin-bottom: 24px;
+    }
+    .design-summary-title {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      color: var(--charcoal);
+      margin-bottom: 14px;
+      font-weight: 500;
+    }
+    .design-summary-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .design-summary-list li {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(201,169,110,0.15);
+      font-size: 14px;
+      color: var(--charcoal);
+    }
+    .design-summary-list li:last-child { border-bottom: none; }
+    .design-summary-list .summary-label {
+      color: var(--gray);
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .design-summary-list .summary-value {
+      font-weight: 500;
+      text-align: right;
+    }
+    .design-summary-list .summary-value.empty {
+      color: var(--light-gray);
+      font-style: italic;
+      font-weight: 300;
+    }
+    .design-notes {
+      margin-top: 18px;
+    }
+    .design-notes label {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .design-notes textarea {
+      width: 100%;
+      background: var(--white);
+      border: 1px solid rgba(201,169,110,0.25);
+      border-radius: 2px;
+      padding: 12px 16px;
+      font-family: var(--font-sans);
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--charcoal);
+      min-height: 80px;
+      resize: vertical;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .design-notes textarea:focus { border-color: var(--gold); }
+    .design-submit {
+      text-align: center;
+      margin-top: 24px;
+    }
+
     /* ─── BOOKING ─── */
     #booking {
       background: var(--charcoal);
@@ -815,6 +977,8 @@
       .dekor-grid { grid-template-columns: repeat(3, 1fr); }
       .booking-wrapper { grid-template-columns: 1fr; gap: 32px; }
       .footer-inner { grid-template-columns: 1fr 1fr; }
+      .design-options.cols-4 { grid-template-columns: repeat(2, 1fr); }
+      .design-options { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 768px) {
       .nav-links, .nav-wa { display: none; }
@@ -827,11 +991,16 @@
       .gallery-grid { columns: 2; }
       .dekor-grid { grid-template-columns: repeat(2, 1fr); }
       .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+      .design-wrapper { padding: 28px 20px; }
+      .design-options, .design-options.cols-4 { grid-template-columns: repeat(2, 1fr); }
+      .design-summary-list li { flex-direction: column; gap: 4px; }
+      .design-summary-list .summary-value { text-align: left; }
     }
     @media (max-width: 480px) {
       .packages-grid { grid-template-columns: 1fr; }
       .gallery-grid { columns: 1; }
       .dekor-grid { grid-template-columns: repeat(2, 1fr); }
+      .design-options, .design-options.cols-4 { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -848,6 +1017,7 @@
       <li><a href="#hero">Beranda</a></li>
       <li><a href="#paket">Paket</a></li>
       <li><a href="#galeri">Galeri</a></li>
+      <li><a href="#design">Design</a></li>
       <li><a href="#booking">Booking</a></li>
       <li><a href="#kontak">Kontak</a></li>
     </ul>
@@ -866,6 +1036,7 @@
   <a href="#hero" onclick="toggleMenu()">Beranda</a>
   <a href="#paket" onclick="toggleMenu()">Paket</a>
   <a href="#galeri" onclick="toggleMenu()">Galeri</a>
+  <a href="#design" onclick="toggleMenu()">Design</a>
   <a href="#booking" onclick="toggleMenu()">Booking</a>
   <a href="#kontak" onclick="toggleMenu()">Kontak</a>
   <a href="https://wa.me/6281234567890" target="_blank" onclick="toggleMenu()">WhatsApp</a>
@@ -1053,6 +1224,166 @@
   </div>
 </section>
 
+<!-- ═══ DESIGN YOUR WEDDING ═══ -->
+<section id="design" class="section">
+  <div class="container">
+    <div class="text-center fade-up">
+      <span class="section-label">Custom Wedding</span>
+      <h2 class="section-title">Design Your<br><em>Dream Wedding</em></h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">Pilih sendiri konsep, budget, lokasi, dan jumlah tamu — kami akan rancang dekorasi pernikahan impianmu sesuai keinginanmu.</p>
+    </div>
+
+    <div class="design-wrapper fade-up delay-1">
+      <!-- STEP 1 — STYLE -->
+      <div class="design-step">
+        <div class="design-step-label"><span class="design-step-num">1</span> Pilih Konsep / Tema</div>
+        <div class="design-options cols-3" data-group="style">
+          <div class="design-option" data-value="Classic Elegant">
+            <span class="design-opt-icon">✦</span>
+            <div class="design-opt-title">Classic Elegant</div>
+            <div class="design-opt-desc">Mewah klasik, nuansa emas dan krem.</div>
+          </div>
+          <div class="design-option" data-value="Royal Luxury">
+            <span class="design-opt-icon">♛</span>
+            <div class="design-opt-title">Royal Luxury</div>
+            <div class="design-opt-desc">Megah ala kerajaan dengan ornamen kristal.</div>
+          </div>
+          <div class="design-option" data-value="Modern Minimalist">
+            <span class="design-opt-icon">◇</span>
+            <div class="design-opt-title">Modern Minimalist</div>
+            <div class="design-opt-desc">Bersih, modern, dan estetik kekinian.</div>
+          </div>
+          <div class="design-option" data-value="Romantic Floral">
+            <span class="design-opt-icon">❀</span>
+            <div class="design-opt-title">Romantic Floral</div>
+            <div class="design-opt-desc">Penuh bunga segar, romantis dan lembut.</div>
+          </div>
+          <div class="design-option" data-value="Rustic Garden">
+            <span class="design-opt-icon">❦</span>
+            <div class="design-opt-title">Rustic Garden</div>
+            <div class="design-opt-desc">Natural, hangat, sentuhan kayu dan dedaunan.</div>
+          </div>
+          <div class="design-option" data-value="Adat Tradisional">
+            <span class="design-opt-icon">✺</span>
+            <div class="design-opt-title">Adat Tradisional</div>
+            <div class="design-opt-desc">Budaya nusantara — Jawa, Sunda, Minang, dll.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 2 — BUDGET -->
+      <div class="design-step">
+        <div class="design-step-label"><span class="design-step-num">2</span> Pilih Range Budget</div>
+        <div class="design-options cols-4" data-group="budget">
+          <div class="design-option" data-value="< Rp 25 Juta">
+            <span class="design-opt-icon">◔</span>
+            <div class="design-opt-title">Hemat</div>
+            <div class="design-opt-desc">Di bawah Rp 25 Juta</div>
+          </div>
+          <div class="design-option" data-value="Rp 25 - 50 Juta">
+            <span class="design-opt-icon">◑</span>
+            <div class="design-opt-title">Standar</div>
+            <div class="design-opt-desc">Rp 25 – 50 Juta</div>
+          </div>
+          <div class="design-option" data-value="Rp 50 - 100 Juta">
+            <span class="design-opt-icon">◕</span>
+            <div class="design-opt-title">Premium</div>
+            <div class="design-opt-desc">Rp 50 – 100 Juta</div>
+          </div>
+          <div class="design-option" data-value="> Rp 100 Juta">
+            <span class="design-opt-icon">●</span>
+            <div class="design-opt-title">Luxury</div>
+            <div class="design-opt-desc">Di atas Rp 100 Juta</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 3 — LOCATION -->
+      <div class="design-step">
+        <div class="design-step-label"><span class="design-step-num">3</span> Tipe Lokasi Acara</div>
+        <div class="design-options cols-3" data-group="location">
+          <div class="design-option" data-value="Indoor — Gedung / Ballroom">
+            <span class="design-opt-icon">🏛</span>
+            <div class="design-opt-title">Gedung / Ballroom</div>
+            <div class="design-opt-desc">Indoor, full AC, kapasitas besar.</div>
+          </div>
+          <div class="design-option" data-value="Outdoor — Garden / Taman">
+            <span class="design-opt-icon">🌿</span>
+            <div class="design-opt-title">Garden / Taman</div>
+            <div class="design-opt-desc">Outdoor, suasana alami dan asri.</div>
+          </div>
+          <div class="design-option" data-value="Rumah / Halaman">
+            <span class="design-opt-icon">🏡</span>
+            <div class="design-opt-title">Rumah / Halaman</div>
+            <div class="design-opt-desc">Lebih intim dan personal.</div>
+          </div>
+          <div class="design-option" data-value="Hotel / Villa">
+            <span class="design-opt-icon">🏨</span>
+            <div class="design-opt-title">Hotel / Villa</div>
+            <div class="design-opt-desc">Eksklusif dengan fasilitas lengkap.</div>
+          </div>
+          <div class="design-option" data-value="Pantai / Beachfront">
+            <span class="design-opt-icon">🌊</span>
+            <div class="design-opt-title">Pantai / Beach</div>
+            <div class="design-opt-desc">Sunset wedding di tepi pantai.</div>
+          </div>
+          <div class="design-option" data-value="Rooftop / Skyline">
+            <span class="design-opt-icon">🌆</span>
+            <div class="design-opt-title">Rooftop / Skyline</div>
+            <div class="design-opt-desc">Modern dengan pemandangan kota.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 4 — GUESTS -->
+      <div class="design-step">
+        <div class="design-step-label"><span class="design-step-num">4</span> Jumlah Tamu Undangan</div>
+        <div class="design-options cols-4" data-group="guests">
+          <div class="design-option" data-value="< 100 Tamu">
+            <div class="design-opt-title">Intimate</div>
+            <div class="design-opt-desc">Kurang dari 100 tamu</div>
+          </div>
+          <div class="design-option" data-value="100 - 300 Tamu">
+            <div class="design-opt-title">Medium</div>
+            <div class="design-opt-desc">100 – 300 tamu</div>
+          </div>
+          <div class="design-option" data-value="300 - 500 Tamu">
+            <div class="design-opt-title">Large</div>
+            <div class="design-opt-desc">300 – 500 tamu</div>
+          </div>
+          <div class="design-option" data-value="> 500 Tamu">
+            <div class="design-opt-title">Grand</div>
+            <div class="design-opt-desc">Lebih dari 500 tamu</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUMMARY -->
+      <div class="design-summary">
+        <div class="design-summary-title">Ringkasan Design Anda</div>
+        <ul class="design-summary-list">
+          <li><span class="summary-label">Konsep / Tema</span><span class="summary-value empty" id="sumStyle">Belum dipilih</span></li>
+          <li><span class="summary-label">Range Budget</span><span class="summary-value empty" id="sumBudget">Belum dipilih</span></li>
+          <li><span class="summary-label">Tipe Lokasi</span><span class="summary-value empty" id="sumLocation">Belum dipilih</span></li>
+          <li><span class="summary-label">Jumlah Tamu</span><span class="summary-value empty" id="sumGuests">Belum dipilih</span></li>
+        </ul>
+        <div class="design-notes">
+          <label>Catatan / Permintaan Khusus</label>
+          <textarea id="designNotes" placeholder="Contoh: dominasi warna pastel, ada area photobooth, panggung untuk band akustik, dll."></textarea>
+        </div>
+      </div>
+
+      <div class="design-submit">
+        <button class="btn btn-wa" onclick="submitDesign()">
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.122 1.523 5.863L0 24l6.303-1.494A11.956 11.956 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.015-1.375l-.36-.213-3.737.885.921-3.634-.235-.374A9.818 9.818 0 1112 21.818z"/></svg>
+          Kirim Design via WhatsApp
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ═══ BOOKING ═══ -->
 <section id="booking" class="section">
   <div class="container">
@@ -1180,6 +1511,7 @@
           <li><a href="#hero">Beranda</a></li>
           <li><a href="#paket">Paket Dekorasi</a></li>
           <li><a href="#galeri">Galeri</a></li>
+          <li><a href="#design">Design Your Wedding</a></li>
           <li><a href="#booking">Booking Slot</a></li>
           <li><a href="#testimonial">Testimoni</a></li>
           <li><a href="#terms">Syarat & Ketentuan</a></li>
@@ -1387,6 +1719,49 @@ Mohon konfirmasi ketersediaan. Terima kasih!`;
 
   // Init calendar
   renderCalendar();
+
+  // ─── DESIGN YOUR WEDDING ───
+  const designSelections = { style: null, budget: null, location: null, guests: null };
+  const sumIds = { style: 'sumStyle', budget: 'sumBudget', location: 'sumLocation', guests: 'sumGuests' };
+
+  document.querySelectorAll('.design-options').forEach(group => {
+    const groupName = group.getAttribute('data-group');
+    group.querySelectorAll('.design-option').forEach(opt => {
+      opt.addEventListener('click', () => {
+        group.querySelectorAll('.design-option').forEach(o => o.classList.remove('selected'));
+        opt.classList.add('selected');
+        const value = opt.getAttribute('data-value');
+        designSelections[groupName] = value;
+        const sumEl = document.getElementById(sumIds[groupName]);
+        sumEl.textContent = value;
+        sumEl.classList.remove('empty');
+      });
+    });
+  });
+
+  function submitDesign() {
+    const { style, budget, location, guests } = designSelections;
+    const notes = document.getElementById('designNotes').value.trim();
+
+    if (!style)    { alert('⚠️ Silakan pilih konsep / tema terlebih dahulu.'); return; }
+    if (!budget)   { alert('⚠️ Silakan pilih range budget.'); return; }
+    if (!location) { alert('⚠️ Silakan pilih tipe lokasi acara.'); return; }
+    if (!guests)   { alert('⚠️ Silakan pilih jumlah tamu undangan.'); return; }
+
+    const msg = `Halo Allessia Wedding! 🌸
+Saya ingin custom design pernikahan dengan detail berikut:
+
+✦ Konsep / Tema : ${style}
+💰 Range Budget : ${budget}
+📍 Tipe Lokasi  : ${location}
+👥 Jumlah Tamu  : ${guests}
+📝 Catatan      : ${notes || '-'}
+
+Mohon info lebih lanjut & rekomendasi dekorasinya. Terima kasih!`;
+
+    const url = `https://wa.me/6281234567890?text=${encodeURIComponent(msg)}`;
+    window.open(url, '_blank');
+  }
 </script>
 </body>
 </html>
