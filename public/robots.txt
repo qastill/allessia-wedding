@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow:
+
+# Crawl-delay untuk bot yang menghormati
+Crawl-delay: 1
+
+# Sitemap
+Sitemap: https://allessia-wedding.vercel.app/sitemap.xml
